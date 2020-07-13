@@ -56,6 +56,17 @@ class Enrollment
         SqlRunner.run( sql )
     end
 
+    def gym_class()
+        sql = "SELECT * FROM gym_classes
+        WHERE id = $1"
+        values = [@gym_class_id]
+        result = SqlRunner.run(sql, values)
+        GymClass.new(result.first)
+    end
+
+    # def member()
+    #     sql = "SELECT * FROM members"
+
     def self.map_items(data)
         data.map {|enrollment| self.new(enrollment)}
     end

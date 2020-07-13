@@ -3,5 +3,6 @@
 <ul>
 <% for gym_class in @gym_classes %>
     <li><%=gym_class.name%></li>
+    <li>Currently enrolled: <%=gym_class.members.first_name%></li>
 <% end %>
 </ul>
