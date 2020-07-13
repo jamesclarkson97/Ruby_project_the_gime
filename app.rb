@@ -3,14 +3,14 @@ require('sinatra/contrib/all')
 require_relative('controllers/members_controller')
 require_relative('controllers/gym_classes_controller')
 require_relative('controllers/enrollments_controller')
-also_reload('models/*')
+also_reload('controllers/*')
 
 get '/' do
     erb(:index)
 end
 
-get '/classes' do
-    "Hello World"
-    # @gym_classes = GymClasses.all()
-    # erb(:"gym_classes/index")
-end
+# get '/classes' do
+#     "Hello World"
+#     # @gym_classes = GymClasses.all()
+#     # erb(:"gym_classes/index")
+# end
