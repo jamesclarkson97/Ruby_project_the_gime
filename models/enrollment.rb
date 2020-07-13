@@ -35,4 +35,16 @@ class Enrollment
         return Enrollment.new(result.first)
     end
 
+    def self.delete(id)
+        sql = "DELETE FROM enrollments
+        WHERE id = $1"
+        value = [id]
+        SqlRunner.run(sql, value)
+    end
+
+    def self.delete_all()
+        sql = "DELETE FROM enrollments"
+        SqlRunner.run( sql )
+    end
+
 end

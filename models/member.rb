@@ -35,4 +35,16 @@ class Member
         return Member.new(result.first)
     end
 
+    def self.delete(id)
+        sql = "DELETE FROM members
+        WHERE id = $1"
+        value = [id]
+        SqlRunner.run(sql, value)
+    end
+
+    def self.delete_all()
+        sql = "DELETE FROM members"
+        SqlRunner.run(sql)
+    end
+
 end
