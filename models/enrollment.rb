@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Enrollment
 
-    attr_reader(:id, :member_id, :gym_class_id)
+    attr_reader :id 
+    attr_accessor :member_id, :gym_class_id
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -24,7 +25,7 @@ class Enrollment
     def self.all()
         sql = "SELECT * FROM enrollments"
         results = SqlRunner.run(sql)
-        return results.map {|enrollment| Enrollment.new(enrollment)}
+        self.map_items(results)
     end
     
     def self.find(id)
@@ -32,7 +33,15 @@ class Enrollment
         WHERE id = $1"
         value = [id]
         result = SqlRunner.run(sql, value)
-        return Enrollment.new(result.first)
+        self.new(result.first)
+    end
+
+    def update()
+        sql = "UPDATE enrollments SET
+        (member_id, gym_class_id) = ($1, $2)
+        WHERE id = $3"
+        values = [@member_id, @gym_class_id, @id]
+        SqlRunner.run(sql, values)
     end
 
     def self.delete(id)
@@ -45,6 +54,10 @@ class Enrollment
     def self.delete_all()
         sql = "DELETE FROM enrollments"
         SqlRunner.run( sql )
+    end
+
+    def self.map_items(data)
+        data.map {|enrollment| self.new(enrollment)}
     end
 
 end
