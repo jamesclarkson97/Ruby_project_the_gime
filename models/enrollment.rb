@@ -21,4 +21,18 @@ class Enrollment
         @id = result.first()['id'].to_i
     end
 
+    def self.all()
+        sql = "SELECT * FROM enrollments"
+        results = SqlRunner.run(sql)
+        return results.map {|enrollment| Enrollment.new(enrollment)}
+    end
+    
+    def self.find(id)
+        sql = "SELECT * FROM enrollments
+        WHERE id = $1"
+        value = [id]
+        result = SqlRunner.run(sql, value)
+        return Enrollment.new(result.first)
+    end
+
 end
