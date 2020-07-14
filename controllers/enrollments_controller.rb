@@ -8,8 +8,12 @@ also_reload('../models/*')
 # NEW
 get '/enrollment/:id' do
     @gym_class = GymClass.find(params['id'].to_i)
-    @members = Member.all()
-    erb(:"enrollments/new")
+    if @gym_class.check_availability == true
+        @members = Member.all()
+        erb(:"enrollments/new")
+    else
+        erb(:"enrollments/unsuccesful")
+    end
 end
 
 # CREATE
