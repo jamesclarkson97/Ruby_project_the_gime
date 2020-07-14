@@ -1,0 +1,7 @@
+<p><%=@gym_class.name%></p>
+    
+    <p>Currently enrolled: <ul>
+        <% for member in @gym_class.members %> 
+            <li><%=member.first_name%> <%=member.last_name%>
+        <% end %>
+    </p>
