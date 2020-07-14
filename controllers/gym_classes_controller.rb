@@ -35,7 +35,7 @@ get '/classes/:id/edit' do
 end
 
 # DESTROY
-get '/classes/:id/delete' do
+post '/classes/:id/delete' do
     GymClass.delete(params['id'].to_i)
     redirect to("/classes")
 end

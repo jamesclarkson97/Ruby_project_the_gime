@@ -12,4 +12,6 @@
     <input type="submit" value="Update Class Info">
 </form>
 
-<p><a href="/classes/<%= @gym_class.id %>/delete">Delete Class</a></p>
+<form action="/classes/<%= @gym_class.id %>/delete" method="post">
+    <input type="submit" value="Delete Class">
+</form>
