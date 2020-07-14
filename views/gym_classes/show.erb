@@ -8,6 +8,8 @@
     <% end %>
 </p>
 
-<p><a href="/classes/<%= @gym_class.id %>/edit">Update Class Info</a></p>
+<form action="/classes/<%= @gym_class.id %>/edit" method="get">
+    <input type="submit" value="Update Class Info">
+</form>
 
 <p><a href="/classes/<%= @gym_class.id %>/delete">Delete Class</a></p>
