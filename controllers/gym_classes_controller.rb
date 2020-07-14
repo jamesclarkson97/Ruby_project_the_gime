@@ -19,7 +19,7 @@ end
 
 post '/classes' do
     @gym_class = GymClass.new(params)
-    @gym_class.update
+    @gym_class.save
     @gym_classes = GymClass.all()
     erb(:"gym_classes/index")
 end
@@ -32,6 +32,6 @@ end
 post '/classes/:id' do
     @gym_class = GymClass.new(params)
     @gym_class.update
-    @gym_classs = GymClass.all()
+    @gym_classes = GymClass.all()
     erb(:"gym_classes/index")
 end
