@@ -23,3 +23,12 @@ post '/enrollment' do
     @gym_class = enrollment.gym_class()
     erb(:"gym_classes/show")
 end
+
+# EDIT
+get '/enrollment/:id/edit' do
+    @gym_class = GymClass.find(params['id'].to_i)
+    
+    "#{@gym_class.members()}"
+    # Enrollment.delete(params['id'].to_i)
+    # redirect to("/classes")
+end

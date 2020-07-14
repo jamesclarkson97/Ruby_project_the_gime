@@ -14,6 +14,10 @@
     <input type="submit" value="Enroll Member">
 </form>
 
+<form action="/enrollment/<%=@gym_class.id%>/edit" method="get">
+    <input type="submit" value="Unenroll Member">
+</form>
+
 <form action="/classes/<%= @gym_class.id %>/edit" method="get">
     <input type="submit" value="Update Class Info">
 </form>
