@@ -8,6 +8,10 @@
     <% end %>
 </p>
 
+<form action="/classes/<%= @gym_class.id %>/enroll" method="get">
+    <input type="submit" value="Enroll Member">
+</form>
+
 <form action="/classes/<%= @gym_class.id %>/edit" method="get">
     <input type="submit" value="Update Class Info">
 </form>
