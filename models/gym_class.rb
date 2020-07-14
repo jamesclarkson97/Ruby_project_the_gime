@@ -67,6 +67,15 @@ class GymClass
         Member.map_items(results)
     end
 
+    def check_availability()
+        currently_enrolled = members().count
+        if currently_enrolled < @max_capacity
+            return true
+        else
+            return false
+        end
+    end
+
     def self.map_items(data)
         data.map {|gym_class| self.new(gym_class)}
     end
