@@ -2,6 +2,6 @@
 
 <ul>
 <% for member in @members %>
-    <li><%=member.first_name%> <%=member.last_name%></li>
+    <li><a href="/members/<%=member.id%>"><%=member.first_name%> <%=member.last_name%></a></li>
 <% end %>
 </ul>

@@ -9,8 +9,6 @@ get '/' do
     erb(:index)
 end
 
-# get '/classes' do
-#     "Hello World"
-#     # @gym_classes = GymClasses.all()
-#     # erb(:"gym_classes/index")
-# end
+get '/home' do
+    erb(:index)
+end
