@@ -1,12 +1,18 @@
-<p><%=@gym_class.name%> Member Enrollment</p>
+<p><%=@gym_class.name%> - Member Enrollment</p>
 
-<form action="/classes/<%=@gym_class.id%>" method="post">
+<form action="/classes/<%= @gym_class.id %>/enrolled" method="post">
 
-<label for="name">Name of Member:</label>
-<select name="name" id="name-select">
+<label for="name">Name of Member:
+<select name="member_id" id="name-select">
 <% for member in @members %>
-    <option><%=member.first_name%> <%=member.last_name%></option>
+    <option value="<%=member.id%>"><%=member.first_name%> <%=member.last_name%></option>
 <% end %>
 </select>
+</label>
+
+<input type="hidden" name="gym_class_id" id="gym-class" value="<%=@gym_class.id%>">
+
 
 <input type="submit" value="Enroll Member in Class">
+
+</form>
