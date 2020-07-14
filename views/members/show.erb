@@ -2,6 +2,8 @@
 
 <p> Member ID: <%= @member.id %>
 
-<p><a href="/members/<%=@member.id%>/edit">Edit Member Info</a></p>
+<form action="/members/<%=@member.id%>/edit" method="get">
+    <input type="submit" value="Edit Member Info">
+</form>
 
 <p><a href="/members/<%=@member.id%>/delete">Delete Member</a></p>
