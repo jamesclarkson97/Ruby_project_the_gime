@@ -9,7 +9,8 @@ GymClass.delete_all()
 
 member1 = Member.new({
     "first_name" => "Homer",
-    "last_name" => "Simpson"
+    "last_name" => "Simpson",
+    "active" => true
 })
 member1.save()
 
