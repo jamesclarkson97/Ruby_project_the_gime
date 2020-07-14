@@ -10,7 +10,8 @@ CREATE TABLE members (
 
 CREATE TABLE gym_classes (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    max_capacity INT
 );
 
 CREATE TABLE enrollments (

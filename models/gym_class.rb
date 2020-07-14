@@ -3,20 +3,21 @@ require_relative('../db/sql_runner')
 class GymClass
 
     attr_reader :id
-    attr_accessor :name
+    attr_accessor :name, :max_capacity
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
         @name = options['name']
+        @max_capacity = options['max_capacity'].to_i
     end
 
     def save()
         sql = "INSERT INTO gym_classes
-        (name)
+        (name, max_capacity)
         VALUES
-        ($1)
+        ($1, $2)
         RETURNING id"
-        values = [@name]
+        values = [@name, @max_capacity]
         result = SqlRunner.run(sql, values)
         @id = result.first()['id'].to_i
     end
@@ -37,9 +38,9 @@ class GymClass
 
     def update()
         sql = "UPDATE gym_classes SET
-        name = $1
-        WHERE id = $2"
-        values = [@name, @id]
+        (name, max_capacity) = ($1, $2)
+        WHERE id = $3"
+        values = [@name, @max_capacity, @id]
         SqlRunner.run(sql, values)
     end
 

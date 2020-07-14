@@ -14,7 +14,8 @@ member1 = Member.new({
 member1.save()
 
 gym_class1 = GymClass.new({
-    "name" => "Mountain Climbing for Beginners"
+    "name" => "Mountain Climbing for Beginners",
+    "max_capacity" => "10"
 })
 gym_class1.save()
 

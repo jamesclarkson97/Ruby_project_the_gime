@@ -56,29 +56,6 @@ class Member
         SqlRunner.run(sql)
     end
 
-    # def enrollments
-    #     sql =
-    # end
-
-    # def member()
-    #     sql = "SELECT * FROM members
-    #     WHERE id = $1"
-    #     values = [@member_id]
-    #     result = SqlRunner.run(sql, values)
-    #     Member.new(result.first)
-    # end
-
-    # def members()
-    #     sql = "SELECT members.*
-    #     FROM members
-    #     INNER JOIN enrollments
-    #     ON enrollments.member_id = members.id
-    #     WHERE enrollments.gym_class_id = $1"
-    #     values = [@id]
-    #     results = SqlRunner.run(sql, values)
-    #     Member.map_items(results)
-    # end
-
     def self.map_items(data)
         data.map {|member| self.new(member)}
     end
