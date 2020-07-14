@@ -1,8 +1,8 @@
 <p><%=@gym_class.name%></p>
 
-<p>Class Capacity: <%=@gym_class.max_capacity.to_s%></p>
+<p>Class Capacity: <%=@gym_class.max_capacity%></p>
 
-<p> Class ID: <%= @gym_class.id %>
+<p>Class ID: <%= @gym_class.id %>
     
 <p>Currently enrolled: <ul>
     <% for member in @gym_class.members %> 
