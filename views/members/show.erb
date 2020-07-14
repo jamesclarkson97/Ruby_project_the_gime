@@ -1,6 +1,8 @@
 <h1><%= @member.first_name %> <%= @member.last_name %></h1>
 
-<p> Member ID: <%= @member.id %>
+<p>Member ID: <%= @member.id %> </p>
+
+<p>Active Member: <%= @member.active %> </p>
 
 <form action="/members/<%=@member.id%>/edit" method="get">
     <input type="submit" value="Edit Member Info">

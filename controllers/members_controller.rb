@@ -22,6 +22,11 @@ end
 
 # CREATE
 post '/members' do
+    if params['active']
+        params[:active] == true
+    else
+        params[:active] == false
+    end
     @member = Member.new(params)
     @member.save
     @members = Member.all()
