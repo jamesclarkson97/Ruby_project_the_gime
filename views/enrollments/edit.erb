@@ -1,0 +1,19 @@
+<p><%=@gym_class.name%> - Member Unenrollment</p>
+
+<form action="/enrollment/delete" method="post" autocomplete="off">
+
+<label for="name">Name of Member:
+<select name="member_id" id="name-select">
+<% for member in @gym_class.members() %>
+    <option value="<%=member.id%>"><%=member.first_name%> <%=member.last_name%></option>
+<% end %>
+</select>
+</label>
+
+<input type="hidden" name="gym_class_id" id="gym-class" value="<%=@gym_class.id%>">
+
+<input type="submit" value="Unenroll Member in Class">
+
+</form>
+
+

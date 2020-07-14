@@ -27,8 +27,12 @@ end
 # EDIT
 get '/enrollment/:id/edit' do
     @gym_class = GymClass.find(params['id'].to_i)
-    
-    "#{@gym_class.members()}"
-    # Enrollment.delete(params['id'].to_i)
-    # redirect to("/classes")
+    @enrollments = Enrollment.all()
+    erb(:"enrollments/edit")   
+end
+
+# DESTROY
+post '/enrollment/delete' do
+    Enrollment.delete_by_foreign_keys(params['member_id'].to_i, params['gym_class_id'].to_i)
+    redirect to("/classes")
 end
