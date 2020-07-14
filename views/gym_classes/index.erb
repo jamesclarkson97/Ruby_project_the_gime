@@ -4,11 +4,6 @@
 <% for gym_class in @gym_classes %>
     <li>
     <p><a href="/classes/<%=gym_class.id%>"><%=gym_class.name%></a></p>
-    <p>Currently enrolled: <ul>
-        <% for member in gym_class.members %> 
-            <li><%=member.first_name%> <%=member.last_name%>
-        <% end %>
-    </p>
     </li>
 
 <hr/>
