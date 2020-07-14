@@ -13,9 +13,9 @@ get '/enrollment/:id' do
 end
 
 # CREATE
-post '/classes/:id/enrolled' do
+post '/enrollment' do
     enrollment = Enrollment.new(params)
     enrollment.save
-    @gym_classes = GymClass.all()
+    @gym_class = enrollment.gym_class()
     erb(:"gym_classes/show")
 end

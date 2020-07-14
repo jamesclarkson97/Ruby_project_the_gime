@@ -1,6 +1,6 @@
 <p><%=@gym_class.name%> - Member Enrollment</p>
 
-<form action="/classes/<%= @gym_class.id %>/enrolled" method="post">
+<form action="/enrollment" method="post">
 
 <label for="name">Name of Member:
 <select name="member_id" id="name-select">
