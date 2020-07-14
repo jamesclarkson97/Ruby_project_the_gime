@@ -35,7 +35,7 @@ get '/members/:id/edit' do
 end
 
 # DESTROY
-get '/members/:id/delete' do
+post '/members/:id/delete' do
     Member.delete(params['id'].to_i)
     redirect to("/members")
 end

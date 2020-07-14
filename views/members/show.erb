@@ -6,4 +6,6 @@
     <input type="submit" value="Edit Member Info">
 </form>
 
-<p><a href="/members/<%=@member.id%>/delete">Delete Member</a></p>
+<form action="/members/<%=@member.id%>/delete" method="post">
+    <input type="submit" value="Delete Member">
+</form>
