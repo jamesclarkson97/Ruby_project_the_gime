@@ -2,7 +2,7 @@
 
 <p>Member ID: <%= @member.id %> </p>
 
-<p>Active Member: <%= @member.active %> </p>
+<p>Member Status: <%= @member.active_string %> </p>
 
 <form action="/members/<%=@member.id%>/edit" method="get">
     <input type="submit" value="Edit Member Info">
