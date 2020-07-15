@@ -1,3 +1,42 @@
 body {
     background-image: url('/images/the_gime.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+      color: #A1B353;
+      border-left: 10px;
+  }
+
+  nav {
+      direction: ltr;
+  }
+
+  a:link {
+      color: #ffffff;
+  }
+
+  a:visited {
+      color: #78B2D9;
+  }
+
+  p {
+      color: #A1B353;
+  }
+
+  li {
+    color: #78B2D9;
+  }
+
+  h3 {
+      color: #A1B353;
+  }
+
+  form {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    line-break: strict;
   }
