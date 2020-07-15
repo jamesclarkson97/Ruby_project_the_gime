@@ -4,8 +4,10 @@
 
 <label for="name">Name of Member:
 <select name="member_id" id="name-select">
-<% for member in @members %>
+<% for member in @members%>
+    <% if member.active()%>
     <option value="<%=member.id%>"><%=member.first_name%> <%=member.last_name%></option>
+    <%end %>
 <% end %>
 </select>
 </label>
