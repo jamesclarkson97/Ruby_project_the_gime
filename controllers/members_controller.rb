@@ -45,6 +45,7 @@ end
 post '/members/:id' do
     @member = Member.new(params)
     @member.update
+    Enrollment.delete_by_member_id(params['id']) if params['active'] != "on"
     @members = Member.all()
     erb(:"members/index")
 end

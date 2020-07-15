@@ -60,6 +60,13 @@ class Enrollment
         SqlRunner.run(sql, values)
     end
 
+    def self.delete_by_member_id(member_id)
+        sql = "DELETE FROM enrollments
+        WHERE member_id = $1"
+        value = [member_id]
+        SqlRunner.run(sql,value)
+    end
+
     def self.delete_all()
         sql = "DELETE FROM enrollments"
         SqlRunner.run( sql )
