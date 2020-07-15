@@ -61,26 +61,18 @@ class Member
         data.map {|member| self.new(member)}
     end
 
-    def activate()
-        @active = true
-    end
-
-    def deactivate()
-        @active = false
-    end
-
     def active_status()
-        if @active == true
+        if @active == "t"
             return "on"
-        else
+        else @active == "f"
             return "off"
         end
     end
 
     def active_string()
-        if @active == true
+        if @active == "t"
             return "Active"
-        else
+        else @active == "f"
             return "Deactivated"
         end
     end

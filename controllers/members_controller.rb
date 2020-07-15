@@ -23,7 +23,7 @@ end
 # CREATE
 post '/members' do
     @member = Member.new(params)
-    params['active'] == "on" ? @member.activate() : @member.deactivate()
+    params['active'] == "on" ? true : false
     @member.save
     @members = Member.all()
     erb(:"members/index")
@@ -44,7 +44,6 @@ end
 # UPDATE
 post '/members/:id' do
     @member = Member.new(params)
-    params['active'] == "on" ? @member.activate() : @member.deactivate()
     @member.update
     @members = Member.all()
     erb(:"members/index")

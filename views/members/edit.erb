@@ -1,12 +1,12 @@
-<form action="/members/<%=@member.id%>" method="post" autocomplete="off">
+<form action="/members/<%=@member.id%>" method="post">
     <label for="first-name">First Name: </label>
-    <input name="first_name" id="first-name" type="text" value=<%= @member.first_name%>>
+    <input name="first_name" id="first-name" type="text" value="<%= @member.first_name%>">
 
     <label for="last-name">Last Name: </label>
-    <input name="last_name" id="last-name" type="text" value=<%= @member.last_name%>>
+    <input name="last_name" id="last-name" type="text" value="<%= @member.last_name%>">
 
     <label for="active">Active Member: </label>
-    <input name="active" id="active" type="checkbox" value=<%= @member.active_status%>>
+    <input name="active" id="active" type="checkbox" <%= "checked" if @member.active()%>>
 
     <input type="submit" value="Update Member">
 </form>
