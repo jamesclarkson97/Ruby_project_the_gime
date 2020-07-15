@@ -1,9 +1,12 @@
 <form action="/classes/<%=@gym_class.id%>" method="post" autocomplete="off">
-    <label for="name">Name of Class: </label>
+    <label for="name"><h3>Name of Class: </h3></label>
     <input name="name" id="name" type="text" value="<%= @gym_class.name%>">
 
-    <label for="max-capacity">Max Capacity of Class: </label>
+    <label for="max-capacity"><h3>Max Capacity of Class: </h3></label>
     <input name="max_capacity" id="max-capacity" type="number" value=<%= @gym_class.max_capacity%>>
 
+    <br>
+    <br>
+    <br>
     <input type="submit" value="Update Class"> 
 </form>
