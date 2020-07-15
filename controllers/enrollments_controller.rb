@@ -33,6 +33,6 @@ end
 
 # DESTROY
 post '/enrollment/delete' do
-    Enrollment.delete_by_foreign_keys(params['member_id'].to_i, params['gym_class_id'].to_i)
+    Enrollment.delete_by_member_and_gym_class_id(params['member_id'].to_i, params['gym_class_id'].to_i)
     redirect to("/classes")
 end

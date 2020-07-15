@@ -51,7 +51,7 @@ class Enrollment
         SqlRunner.run(sql, value)
     end
 
-    def self.delete_by_foreign_keys(member_id, gym_class_id)
+    def self.delete_by_member_and_gym_class_id(member_id, gym_class_id)
         sql = "DELETE FROM enrollments
         WHERE
         (member_id, gym_class_id)
