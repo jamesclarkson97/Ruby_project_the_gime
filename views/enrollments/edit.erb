@@ -2,7 +2,7 @@
 
 <form action="/enrollment/delete" method="post" autocomplete="off">
 
-<label for="name">Name of Member:
+<label for="name"><h3>Name of Member: </h3>
 <select name="member_id" id="name-select">
 <% for member in @gym_class.members() %>
     <% if member.active()%>
@@ -14,6 +14,9 @@
 
 <input type="hidden" name="gym_class_id" id="gym-class" value="<%=@gym_class.id%>">
 
+    <br>
+    <br>
+    <br>
 <input type="submit" value="Unenroll Member in Class">
 
 </form>
